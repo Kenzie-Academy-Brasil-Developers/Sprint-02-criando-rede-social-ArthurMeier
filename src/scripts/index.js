@@ -30,12 +30,13 @@ function criarPerfilArea(user) {
     imgPerfil.src = user.img
     imgPerfil.alt = "Foto de perfil"
     name.innerText = user.user
+    name.id = "user"
     stack.innerText = user.stack
     title.placeholder = "    Digitar título do post"
     text.placeholder = "   Digitar descrição do post"
     button.innerText = "Postar"
     button.setAttribute('type', 'submit')
-
+    button.id = "postar"
 }
 
 function criarAside(array) {
@@ -146,6 +147,8 @@ function renderSite() {
     criarPostArea(posts)
     seguir()
     like()
+    renderModal()
+    postar()
 }
 
 function renderModal() {
@@ -280,5 +283,40 @@ function like() {
     }
 }
 
+function postar() {
+    const button = document.querySelector('#postar')
+    const postTitle = document.querySelector('.container__post--title')
+    const postText = document.querySelector('.container__post--post')
+    const postPerfil = document.querySelector('#user')
+    const perfilArea = document.querySelector('#perfilArea')
+
+    button.addEventListener('click', () => {
+
+        for (let i = 0; i < users.length; i++) {
+
+            if (postPerfil.textContent == users[i].user) {
+
+                posts.push({
+                    id_post: posts.length + 2,
+                    user: users[i].id,
+                    title: postTitle.value,
+                    text: postText.value
+                })
+
+                post.innerHTML = ''
+                perfilArea.innerHTML = ''
+
+                criarPostArea(posts)
+                like()
+                renderModal()
+                criarPerfilArea(users[1])
+                postar()
+
+            }
+
+        }
+    })
+
+}
+
 renderSite()
-renderModal()

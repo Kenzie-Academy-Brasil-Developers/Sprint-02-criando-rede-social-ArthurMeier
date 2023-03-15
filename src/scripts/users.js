@@ -34,12 +34,12 @@ const users = [
     id: 6,
     user: "Filipe Gutierry",
     stack: "",
-    img: "./src/assets/img/user7.svg",
+    img: "./src/assets/img/user6.svg",
   },
   {
     id: 7,
-    user: "Samuel Persuhn",
+    user: "Linda Jones",
     stack: "",
-    img: "./src/assets/img/user6.svg",
+    img: "./src/assets/img/user7.svg",
   },
 ];

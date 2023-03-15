@@ -8,7 +8,7 @@ const sugestUsers = [{
     id: 7,
     user: "Samuel Persuhn",
     stack: "Nao informado",
-    img: "./src/assets/img/user6.svg",
+    img: "./src/assets/img/user2.svg",
 }, {
     id: 6,
     user: "Filipe Gutierry",
